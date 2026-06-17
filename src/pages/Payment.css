@@ -1,0 +1,137 @@
+.payment-page {
+  padding-top: 40px;
+  padding-bottom: 80px;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+}
+
+.payment-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.payment-form-section {
+  padding: 40px;
+}
+
+.mb-4 { margin-bottom: 24px; }
+.my-4 { margin: 24px 0; border-color: var(--surface-border); }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.text-secondary { color: var(--text-secondary); }
+
+.payment-methods {
+  display: flex;
+  gap: 16px;
+}
+
+.method-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  background: rgba(0,0,0,0.2);
+  border: 1px solid var(--surface-border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.method-btn.active {
+  border-color: var(--primary-color);
+  background: rgba(0, 255, 136, 0.1);
+}
+
+.card-input-wrapper {
+  position: relative;
+}
+
+.card-icon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-secondary);
+}
+
+.payment-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.secure-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.order-summary {
+  padding: 40px;
+  height: fit-content;
+  background: linear-gradient(180deg, rgba(25, 25, 25, 0.8) 0%, rgba(25, 25, 25, 0.4) 100%);
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 1.05rem;
+}
+
+.summary-item.total {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.plan-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.plan-features-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.plan-features-list li svg {
+  color: var(--primary-color);
+}
+
+.success-message {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 60px 40px;
+}
+
+.success-message h2 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.success-message p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+@media screen and (max-width: 960px) {
+  .payment-grid {
+    grid-template-columns: 1fr;
+  }
+}

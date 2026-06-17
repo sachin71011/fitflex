@@ -1,0 +1,145 @@
+.navbar {
+  background: transparent;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  transition: var(--transition);
+}
+
+.navbar.scrolled {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.logo {
+  color: var(--text-primary);
+  justify-self: start;
+  cursor: pointer;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  font-weight: 800;
+  gap: 8px;
+}
+
+.logo-icon {
+  color: var(--primary-color);
+}
+
+.nav-menu {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 2rem;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links {
+  color: var(--text-primary);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  transition: var(--transition);
+  position: relative;
+}
+
+.nav-links::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: var(--transition);
+}
+
+.nav-links:hover::after, .nav-links.active::after {
+  width: 80%;
+}
+
+.nav-links:hover, .nav-links.active {
+  color: var(--primary-color);
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.menu-icon {
+  display: none;
+}
+
+.logout-btn {
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  background: transparent;
+}
+
+@media screen and (max-width: 960px) {
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 80px;
+    left: -100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+    background: var(--bg-color);
+    padding: 2rem;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .nav-menu.active {
+    background: var(--bg-gradient);
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+
+  .nav-links {
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    display: block;
+    font-size: 1.2rem;
+  }
+
+  .nav-buttons {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 2rem;
+  }
+
+  .nav-buttons .btn {
+    width: 100%;
+  }
+
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+    color: var(--text-primary);
+  }
+}
